@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademy.ThunderSound.ClientLayer", "ItAcademy.ThunderSound.Client\ItAcademy.ThunderSound.ClientLayer.csproj", "{0D3D8F78-3097-40A4-B826-AF4B0158DD3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademy.ThunderSound.DomainLayer", "ItAcademy.ThunderSound.DomainLayer\ItAcademy.ThunderSound.DomainLayer.csproj", "{5D175609-9E8B-4412-A8D6-00A9420BBC58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademy.ThunderSound.DataLayer", "ItAcademy.ThunderSound.DataLayer\ItAcademy.ThunderSound.DataLayer.csproj", "{A589CE88-65B3-41C7-9004-895F841A2DB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 ClientLayer", "1 ClientLayer", "{B107CC7A-2388-49E9-A735-7100FEBF78F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 DomainLayer", "2 DomainLayer", "{A826DBA3-7AF9-40B6-949A-8E535DB9EAB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 DataLayer", "3 DataLayer", "{44FDFF40-2104-4FD9-AA18-C2C1C4A1F5B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{0405F5D9-DD60-4D45-A1EA-6B5A9BFA64CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Initializer", "DB_Initializer\DB_Initializer.csproj", "{98C45BB6-FCC5-4121-A97F-CC72C9FE2936}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3756257D-4396-4FA9-AC13-C632152F29B9}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D3D8F78-3097-40A4-B826-AF4B0158DD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3D8F78-3097-40A4-B826-AF4B0158DD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3D8F78-3097-40A4-B826-AF4B0158DD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3D8F78-3097-40A4-B826-AF4B0158DD3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D175609-9E8B-4412-A8D6-00A9420BBC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D175609-9E8B-4412-A8D6-00A9420BBC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D175609-9E8B-4412-A8D6-00A9420BBC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D175609-9E8B-4412-A8D6-00A9420BBC58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A589CE88-65B3-41C7-9004-895F841A2DB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A589CE88-65B3-41C7-9004-895F841A2DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A589CE88-65B3-41C7-9004-895F841A2DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A589CE88-65B3-41C7-9004-895F841A2DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98C45BB6-FCC5-4121-A97F-CC72C9FE2936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C45BB6-FCC5-4121-A97F-CC72C9FE2936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C45BB6-FCC5-4121-A97F-CC72C9FE2936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C45BB6-FCC5-4121-A97F-CC72C9FE2936}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D3D8F78-3097-40A4-B826-AF4B0158DD3A} = {B107CC7A-2388-49E9-A735-7100FEBF78F3}
+		{5D175609-9E8B-4412-A8D6-00A9420BBC58} = {A826DBA3-7AF9-40B6-949A-8E535DB9EAB5}
+		{A589CE88-65B3-41C7-9004-895F841A2DB7} = {44FDFF40-2104-4FD9-AA18-C2C1C4A1F5B6}
+		{98C45BB6-FCC5-4121-A97F-CC72C9FE2936} = {0405F5D9-DD60-4D45-A1EA-6B5A9BFA64CE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9F495F1-B83F-4B06-9452-FC6AB2D01AC9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ItAcademy.ThunderSound.Client.Models.LabelViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @Html.HiddenFor(modelItem => item.LabelId)
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <img src="@Url.Action("GetImage", new { id = item.LabelId })" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.LabelId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.LabelId })
+            </td>
+        </tr>
+    }
+
+</table>

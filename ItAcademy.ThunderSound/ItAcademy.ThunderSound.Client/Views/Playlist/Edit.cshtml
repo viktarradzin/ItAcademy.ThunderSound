@@ -1,0 +1,50 @@
+﻿@model ItAcademy.ThunderSound.Client.Models.PlayListViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Редактирование альбома</h2>
+
+@using (Html.BeginForm("Edit", "PlayList", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        @Html.HiddenFor(model => model.PlayListId)
+        @Html.HiddenFor(model => model.Genre.GenreId, new { @id = "genreIdSelectedValue" })
+        @Html.HiddenFor(model => model.Singer.SingerId, new { @id = "singerIdSelectedValue" })
+        <legend>Редактирование т</legend>
+        <div class="editor-label">Название</div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PlayListName)
+            @Html.ValidationMessageFor(model => model.PlayListName, "", new { @class = "text-danger" })
+        </div>
+        <div class="editor-label">Жанр</div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Genre.GenreId, Model.SelectListGenres, new { @id = "genre" });
+            @Html.ValidationMessageFor(model => model.Genre.GenreId, "", new { @class = "text-danger" })
+        </div>
+        <div class="editor-label">Исполнитель</div>
+        <div id="singerPlace" class="editor-field">
+            @Html.DropDownListFor(model => model.Singer.SingerId, Model.SelectListSingers, new { @id = "singer" });
+            @Html.ValidationMessageFor(model => model.Singer.SingerId, "", new { @class = "text-danger" })
+        </div>
+        <div class="editor-label">Лэйбл</div>
+        <div id="playListPlace" class="editor-field">
+            @Html.DropDownListFor(model => model.Label.LabelId, Model.SelectListLabels, new { @id = "label" });
+            @Html.ValidationMessageFor(model => model.Label.LabelId, "", new { @class = "text-danger" })
+        </div>
+        <div class="editor-label">Изображение</div>
+        <div class="editor-field">
+            <input type="file" name="@Html.NameFor(model=> model.UploadImage)" />
+            @Html.ValidationMessageFor(model => model.UploadImage, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Редактировать" />
+        </p>
+        <div>
+            @Html.ActionLink("Вернуться к списку", "Index")
+        </div>
+    </fieldset>
+}

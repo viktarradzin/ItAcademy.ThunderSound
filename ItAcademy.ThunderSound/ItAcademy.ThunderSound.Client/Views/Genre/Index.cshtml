@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ItAcademy.ThunderSound.Client.Models.GenreViewModel>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="~/Content/logo.png" class="img-fluid d-block w-100" alt="...">
+            <div class="list-group">
+                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Genres", "Index", "Genre", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Singers", "Index", "Singer", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Tracks", "Index", "Track", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Albums", "Index", "PlayList", null, new { @class = "list-group-item" })
+            </div>
+        </div>
+        <div class="col-lg-9">
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Create", "Create")
+            }
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img id="main_image" src="@Url.Action("GetImage", new { id = item.GenreId })" />
+                            <div class="card-body">
+                                <h6>@Html.ActionLink(item.GenreName, "Genre", "Track", new { id = item.GenreId }, null)</h6>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.GenreId })
+                                    @:&nbsp;
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.GenreId })
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+</div>

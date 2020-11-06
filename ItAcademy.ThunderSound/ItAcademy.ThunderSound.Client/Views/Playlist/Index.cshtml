@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ItAcademy.ThunderSound.Client.Models.PlayListViewModel>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="~/Content/logo.png" class="img-fluid d-block w-100" alt="...">
+            <div class="list-group">
+                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Tracks", "Index", "Track", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Genres", "Index", "Genre", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Singers", "Index", "Singer", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Albums", "Index", "PlayList", null, new { @class = "list-group-item" })
+            </div>
+        </div>
+            <div class="col-lg-9">
+                @if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Create New", "Create") 
+                }
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img id="main_image" src="@Url.Action("GetImage", new { id = item.PlayListId } )" />
+                                <div class="card-body">
+                                    <h6>@Html.ActionLink(item.Singer.SingerName, "Singer", "Track", new { id = item.Singer.SingerId }, null)</h6>
+                                    <h6>@Html.ActionLink(item.PlayListName, "PlayList", "Track", new { id = item.PlayListId }, null)</h6>
+                                    <h6>@Html.ActionLink(item.Genre.GenreName, "Genre", "Track", new { id = item.Genre.GenreId }, null)</h6>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.PlayListId })
+                                        @:&nbsp;
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.PlayListId })
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
