@@ -3,16 +3,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-3">
-            <img src="~/Content/logo.png" class="img-fluid d-block w-100" alt="...">
-            <div class="list-group">
-                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Genres", "Index", "Genre", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Singers", "Index", "Singer", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Tracks", "Index", "Track", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Albums", "Index", "PlayList", null, new { @class = "list-group-item" })
-            </div>
-        </div>
+        @Html.Partial("Menu")
         <div class="col-lg-9">
             <div class="row my-4">
             <div class="col-md-12">
